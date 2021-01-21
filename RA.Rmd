@@ -1,0 +1,32 @@
+---
+title: "RA"
+author: "Sandeep Singh"
+date: "21/01/2021"
+output: 
+  html_document:
+    keep_md: true
+always_allow_html: true
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+```{r}
+library(dplyr)
+library(readxl)
+library(DT)
+library(tidyr)
+library(data.table)
+library(ggplot2)
+library(knitr)
+```
+
+* Raw file downloaded from NHGRI-EBI
+```{r}
+# examning raw file downloaded file from NHGRI-EBI
+RA <- read_xlsx("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/Functional_annotation_diseases/RA/download.xlsx") %>% 
+  select(1, 2, 5, 7, 8, 11)
+
+kable(RA, align = "lccrr")
+```
